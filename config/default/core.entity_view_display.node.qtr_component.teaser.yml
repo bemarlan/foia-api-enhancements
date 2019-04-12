@@ -1,0 +1,20 @@
+uuid: 9e5bf8cb-3524-47f2-a108-ef643a4dc255
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.qtr_component.field_qtr_report_year
+    - node.type.qtr_component
+  module:
+    - user
+id: node.qtr_component.teaser
+targetEntityType: node
+bundle: qtr_component
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_qtr_report_year: true

@@ -1,0 +1,21 @@
+uuid: ac570428-9f13-45f2-b116-7c0f1de07a67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qtr_report_quarter
+    - node.type.qtr_component
+  module:
+    - options
+id: node.qtr_component.field_qtr_report_quarter
+field_name: field_qtr_report_quarter
+entity_type: node
+bundle: qtr_component
+label: Quarter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

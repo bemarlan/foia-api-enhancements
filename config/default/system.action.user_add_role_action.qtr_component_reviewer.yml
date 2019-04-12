@@ -1,0 +1,14 @@
+uuid: ede52bab-fee5-4b91-b640-41c336a790b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.qtr_component_reviewer
+  module:
+    - user
+id: user_add_role_action.qtr_component_reviewer
+label: 'Add the Agency Component quarterly report reviewer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: qtr_component_reviewer

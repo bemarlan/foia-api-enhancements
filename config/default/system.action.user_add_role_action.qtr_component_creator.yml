@@ -1,0 +1,14 @@
+uuid: 8ce1f978-9e94-4efe-be2a-0ad61972fa6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.qtr_component_creator
+  module:
+    - user
+id: user_add_role_action.qtr_component_creator
+label: 'Add the Agency Component quarterly report creator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: qtr_component_creator

@@ -1,0 +1,14 @@
+uuid: e5369e11-5649-4e5d-b1ca-43d6ec6a7485
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.qtr_component_reviewer
+  module:
+    - user
+id: user_remove_role_action.qtr_component_reviewer
+label: 'Remove the Agency Component quarterly report reviewer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: qtr_component_reviewer

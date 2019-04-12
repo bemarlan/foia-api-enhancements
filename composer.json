@@ -31,7 +31,8 @@
         "drupal/views_data_export": "^1.0",
         "drupal/hsts": "^1.0",
         "consolidation/robo": "~1.2.4",
-        "dompdf/dompdf": "^0.8.2"
+        "dompdf/dompdf": "^0.8.2",
+        "drupal/auto_entitylabel": "2.x-dev"
     },
     "require-dev": {
         "geerlingguy/drupal-vm": "~4.3"

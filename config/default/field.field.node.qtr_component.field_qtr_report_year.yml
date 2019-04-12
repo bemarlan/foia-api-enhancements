@@ -1,0 +1,21 @@
+uuid: 1e2f9871-6b5a-438a-a9a5-19ca0f06471b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qtr_report_year
+    - node.type.qtr_component
+  module:
+    - options
+id: node.qtr_component.field_qtr_report_year
+field_name: field_qtr_report_year
+entity_type: node
+bundle: qtr_component
+label: Year
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

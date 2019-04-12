@@ -122,3 +122,5 @@ csv_serialization: 1.3.0
 views_data_export: 1.0.0-alpha4
 hsts: 1.0.0
 devel: 0.0.0
+update: 0.0.0
+auto_entitylabel: 0.0.0
