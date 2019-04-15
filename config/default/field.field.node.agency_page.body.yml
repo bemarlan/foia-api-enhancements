@@ -1,0 +1,22 @@
+uuid: 80ac1263-7fe2-4b9a-afdd-25a2e18e707f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.agency_page
+  module:
+    - text
+id: node.agency_page.body
+field_name: body
+entity_type: node
+bundle: agency_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

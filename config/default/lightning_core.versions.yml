@@ -124,3 +124,7 @@ hsts: 1.0.0
 devel: 0.0.0
 update: 0.0.0
 auto_entitylabel: 0.0.0
+viewfield: 0.0.0
+computed_field: 2.0.0-beta1
+views_cumulative_field: 1.5.0
+views_aggregator: 0.0.0

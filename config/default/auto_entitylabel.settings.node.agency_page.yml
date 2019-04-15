@@ -1,0 +1,7 @@
+status: 1
+pattern: '[node:field_federal_agency]'
+php: false
+escape: false
+dependencies:
+  config:
+    - node.type.agency_page

@@ -1,0 +1,18 @@
+uuid: 87ee649c-2330-4e8d-a779-8b62b0a582c7
+langcode: en
+status: true
+dependencies: {  }
+id: agency_page_reviewer
+label: 'Agency page reviewer'
+weight: 16
+is_admin: false
+permissions:
+  - 'access content overview'
+  - 'delete any agency_page content'
+  - 'edit any agency_page content'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_published transition'
+  - 'use published_archived transition'
+  - 'use published_published transition'
+  - 'view moderation states'

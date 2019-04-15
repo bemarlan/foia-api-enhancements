@@ -37,14 +37,14 @@ content:
     region: content
   field_qtr_perfected_10_or_more:
     weight: 7
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_qtr_perfected_less_than_10:
     weight: 8
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default

@@ -1,0 +1,46 @@
+uuid: 3df76595-67df-40c0-b325-615ce5b7b01f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_agency_report
+    - node.type.agency_page
+    - views.view.agency_report
+  module:
+    - viewfield
+id: node.agency_page.field_agency_report
+field_name: field_agency_report
+entity_type: node
+bundle: agency_page
+label: 'Agency Report'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    token_help: ''
+    display_id: default
+    arguments: 'node[node:nid]'
+    target_uuid: 42ab4a89-72dc-4078-b0e2-0a7333710192
+default_value_callback: ''
+settings:
+  force_default: 0
+  allowed_views:
+    agency_report: agency_report
+    agency_finder: 0
+    content: 0
+    file_entity_files: 0
+    foia_requests: 0
+    media: 0
+    moderation_history: 0
+    user_admin_people: 0
+    taxonomy_term: 0
+  allowed_display_types:
+    default: default
+    data_export: 0
+    entity_browser: 0
+    feed: 0
+    page: 0
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

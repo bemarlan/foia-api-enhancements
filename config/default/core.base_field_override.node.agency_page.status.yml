@@ -1,0 +1,22 @@
+uuid: 69db4c33-c2ef-4390-ab7d-c7747d4175aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.agency_page
+id: node.agency_page.status
+field_name: status
+entity_type: node
+bundle: agency_page
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

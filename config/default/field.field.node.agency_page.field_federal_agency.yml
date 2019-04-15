@@ -1,0 +1,29 @@
+uuid: 77093fa2-1ff7-4069-a1b2-33ba751518ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_federal_agency
+    - node.type.agency_page
+    - taxonomy.vocabulary.agency
+id: node.agency_page.field_federal_agency
+field_name: field_federal_agency
+entity_type: node
+bundle: agency_page
+label: Agency
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      agency: agency
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -40,6 +40,7 @@ field_settings:
       view_mode:
         'entity:node':
           agency_component: default
+          agency_page: default
           landing_page: full
           page: default
           qtr_component: default

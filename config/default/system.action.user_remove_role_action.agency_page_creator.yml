@@ -1,0 +1,14 @@
+uuid: 2b8d1e12-51d0-41e3-9c5a-0756e229f89b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.agency_page_creator
+  module:
+    - user
+id: user_remove_role_action.agency_page_creator
+label: 'Remove the Agency page creator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: agency_page_creator
