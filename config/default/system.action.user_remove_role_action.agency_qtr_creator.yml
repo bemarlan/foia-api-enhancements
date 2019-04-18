@@ -1,0 +1,14 @@
+uuid: e30af25c-9371-4300-915f-f8cdc54c96a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.agency_qtr_creator
+  module:
+    - user
+id: user_remove_role_action.agency_qtr_creator
+label: 'Remove the Agency Quarter creator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: agency_qtr_creator

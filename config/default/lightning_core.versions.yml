@@ -91,7 +91,7 @@ search_api_db: 1.6.0
 seckit: 1.0.0-alpha2
 serialization: 8.4.5
 shortcut: 8.4.5
-simplesamlphp_auth: 3.0.0-rc2
+simplesamlphp_auth: 3.0.0
 swiftmailer: 1.0.0-beta1
 syslog: 8.4.5
 system: 8.4.5

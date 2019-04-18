@@ -1,0 +1,26 @@
+uuid: cc2935d7-6255-4a4e-b47c-c302e6fdf3af
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.agency_qtr.field_qtr_perfected_10_or_more
+    - field.field.node.agency_qtr.field_qtr_perfected_less_than_10
+    - field.field.node.agency_qtr.field_qtr_report_quarter
+    - field.field.node.agency_qtr.field_qtr_report_year
+    - node.type.agency_qtr
+  module:
+    - user
+id: node.agency_qtr.teaser
+targetEntityType: node
+bundle: agency_qtr
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_qtr_perfected_10_or_more: true
+  field_qtr_perfected_less_than_10: true
+  field_qtr_report_quarter: true
+  field_qtr_report_year: true

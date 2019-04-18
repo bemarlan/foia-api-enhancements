@@ -1,13 +1,13 @@
-uuid: 69db4c33-c2ef-4390-ab7d-c7747d4175aa
+uuid: 215cb9aa-3b84-4600-8b71-5b4b2b3ee0e9
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.agency_page
-id: node.agency_page.status
+    - node.type.agency_qtr
+id: node.agency_qtr.status
 field_name: status
 entity_type: node
-bundle: agency_page
+bundle: agency_qtr
 label: Published
 description: ''
 required: false

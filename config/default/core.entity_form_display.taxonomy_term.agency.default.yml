@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.taxonomy_term.agency.field_agency_abbreviation
     - field.field.taxonomy_term.agency.field_agency_category
+    - field.field.taxonomy_term.agency.field_agency_component_qtr_repor
+    - field.field.taxonomy_term.agency.field_agency_quarterly_report
     - field.field.taxonomy_term.agency.field_agency_seal
     - image.style.thumbnail
     - taxonomy.vocabulary.agency
@@ -12,6 +14,7 @@ dependencies:
     - image
     - path
     - text
+    - viewfield
 id: taxonomy_term.agency.default
 targetEntityType: taxonomy_term
 bundle: agency
@@ -19,7 +22,7 @@ mode: default
 content:
   description:
     type: text_textarea
-    weight: 4
+    weight: 3
     region: content
     settings:
       placeholder: ''
@@ -34,13 +37,25 @@ content:
     type: string_textfield
     region: content
   field_agency_category:
-    weight: 6
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
+  field_agency_component_qtr_repor:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: viewfield_select
+    region: content
+  field_agency_quarterly_report:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: viewfield_select
+    region: content
   field_agency_seal:
-    weight: 3
+    weight: 2
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -57,7 +72,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

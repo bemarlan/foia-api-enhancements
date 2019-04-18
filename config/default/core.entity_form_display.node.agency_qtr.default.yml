@@ -1,15 +1,14 @@
-uuid: b258abb9-d374-40fe-9448-f7accf54a943
+uuid: a7275f37-02b0-46fe-998e-2b8e8ebd3c11
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.qtr_component.field_qtr_agency_component
-    - field.field.node.qtr_component.field_qtr_report_quarter
-    - field.field.node.qtr_component.field_qtr_report_year
-    - field.field.node.qtr_component.field_qtr_requests_backlogged
-    - field.field.node.qtr_component.field_qtr_requests_processed
-    - field.field.node.qtr_component.field_qtr_requests_received
-    - node.type.qtr_component
+    - field.field.node.agency_qtr.field_agency_term
+    - field.field.node.agency_qtr.field_qtr_perfected_10_or_more
+    - field.field.node.agency_qtr.field_qtr_perfected_less_than_10
+    - field.field.node.agency_qtr.field_qtr_report_quarter
+    - field.field.node.agency_qtr.field_qtr_report_year
+    - node.type.agency_qtr
   module:
     - content_moderation
     - field_group
@@ -18,9 +17,10 @@ third_party_settings:
   field_group:
     group_agency:
       children:
-        - field_qtr_agency_component
+        - field_agency_term
+        - title
       parent_name: ''
-      weight: 8
+      weight: 0
       format_type: fieldset
       format_settings:
         id: ''
@@ -33,7 +33,7 @@ third_party_settings:
         - field_qtr_report_year
         - field_qtr_report_quarter
       parent_name: ''
-      weight: 9
+      weight: 8
       format_type: fieldset
       format_settings:
         id: ''
@@ -41,9 +41,22 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Reporting Quarter'
-id: node.qtr_component.default
+    group_ten_oldest_requests:
+      children:
+        - field_qtr_perfected_10_or_more
+        - field_qtr_perfected_less_than_10
+      parent_name: ''
+      weight: 9
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'TEN OLDEST REQUESTS'
+id: node.agency_qtr.default
 targetEntityType: node
-bundle: qtr_component
+bundle: agency_qtr
 mode: default
 content:
   created:
@@ -52,8 +65,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_qtr_agency_component:
-    weight: 9
+  field_agency_term:
+    weight: 26
     settings:
       match_operator: CONTAINS
       size: 60
@@ -61,38 +74,29 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_qtr_report_quarter:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_qtr_report_year:
+  field_qtr_perfected_10_or_more:
     weight: 10
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
-  field_qtr_requests_backlogged:
+  field_qtr_perfected_less_than_10:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_qtr_report_quarter:
     weight: 14
-    settings:
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: number
+    type: options_select
     region: content
-  field_qtr_requests_processed:
+  field_qtr_report_year:
     weight: 13
-    settings:
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: number
-    region: content
-  field_qtr_requests_received:
-    weight: 12
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
+    type: options_select
     region: content
   moderation_state:
     type: moderation_state_default
@@ -129,7 +133,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 27
     region: content
     settings:
       size: 60

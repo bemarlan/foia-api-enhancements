@@ -9,7 +9,7 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'Agency Component quarterly report'
+name: 'Agency Component Quarterly Report'
 type: qtr_component
 description: 'Creates an editable, publishable quarterly report for an Agency Component of the Federal government.'
 help: ''

@@ -1,13 +1,13 @@
-uuid: 863ca6c5-07aa-4b5f-9f6c-58c76e9174b7
+uuid: 91292d2d-4964-4c2f-8691-c4b40ac3dc1c
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.agency_page
-id: node.agency_page.promote
+    - node.type.agency_qtr
+id: node.agency_qtr.promote
 field_name: promote
 entity_type: node
-bundle: agency_page
+bundle: agency_qtr
 label: 'Promoted to front page'
 description: ''
 required: false

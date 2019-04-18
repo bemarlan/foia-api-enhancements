@@ -1,15 +1,15 @@
-uuid: 77093fa2-1ff7-4069-a1b2-33ba751518ba
+uuid: 10ed53f5-dd8f-452b-a70c-9635664b543c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_federal_agency
-    - node.type.agency_page
+    - field.storage.node.field_agency_term
+    - node.type.agency_qtr
     - taxonomy.vocabulary.agency
-id: node.agency_page.field_federal_agency
-field_name: field_federal_agency
+id: node.agency_qtr.field_agency_term
+field_name: field_agency_term
 entity_type: node
-bundle: agency_page
+bundle: agency_qtr
 label: Agency
 description: ''
 required: false

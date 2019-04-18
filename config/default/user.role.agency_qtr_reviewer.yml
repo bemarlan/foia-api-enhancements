@@ -1,15 +1,15 @@
-uuid: 87ee649c-2330-4e8d-a779-8b62b0a582c7
+uuid: 10382a50-ef14-4650-bcc9-7c03d2e9aacc
 langcode: en
 status: true
 dependencies: {  }
-id: agency_page_reviewer
-label: 'Agency page reviewer'
-weight: 16
+id: agency_qtr_reviewer
+label: 'Agency Quarter reviewer'
+weight: 18
 is_admin: false
 permissions:
   - 'access content overview'
-  - 'delete any agency_page content'
-  - 'edit any agency_page content'
+  - 'delete any agency_qtr content'
+  - 'edit any agency_qtr content'
   - 'use draft_published transition'
   - 'use needs_review_draft transition'
   - 'use needs_review_published transition'

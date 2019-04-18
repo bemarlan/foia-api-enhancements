@@ -17,4 +17,11 @@ content:
     weight: 100
     region: content
 hidden:
+  field_qtr_agency_component: true
+  field_qtr_perfected_10_or_more: true
+  field_qtr_perfected_less_than_10: true
+  field_qtr_report_quarter: true
   field_qtr_report_year: true
+  field_qtr_requests_backlogged: true
+  field_qtr_requests_processed: true
+  field_qtr_requests_received: true

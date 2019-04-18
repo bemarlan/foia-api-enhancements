@@ -1,0 +1,14 @@
+uuid: 4f31df62-24a9-432c-9f5a-6589befabe48
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.agency_qtr_creator
+  module:
+    - user
+id: user_add_role_action.agency_qtr_creator
+label: 'Add the Agency Quarter creator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: agency_qtr_creator

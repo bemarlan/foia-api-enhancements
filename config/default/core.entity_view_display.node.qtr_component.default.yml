@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.qtr_component.field_qtr_agency_component
-    - field.field.node.qtr_component.field_qtr_perfected_10_or_more
-    - field.field.node.qtr_component.field_qtr_perfected_less_than_10
     - field.field.node.qtr_component.field_qtr_report_quarter
     - field.field.node.qtr_component.field_qtr_report_year
     - field.field.node.qtr_component.field_qtr_requests_backlogged
@@ -34,20 +32,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_qtr_perfected_10_or_more:
-    weight: 7
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_qtr_perfected_less_than_10:
-    weight: 8
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
     region: content
   field_qtr_report_quarter:
     weight: 3

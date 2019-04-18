@@ -1,18 +1,19 @@
-uuid: d7ca2f77-ef7d-4a45-86aa-7e85c08a503d
+uuid: 8e455778-9eb5-48de-aff0-d21fab8077be
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_qtr_perfected_10_or_more
-    - field.storage.node.field_qtr_perfected_less_than_10
-    - node.type.agency_qtr
+    - field.storage.node.field_qtr_requests_backlogged
+    - field.storage.node.field_qtr_requests_processed
+    - field.storage.node.field_qtr_requests_received
+    - node.type.qtr_component
   module:
     - node
     - options
     - user
     - views_aggregator
-id: agency_report
-label: 'Agency Report'
+id: agency_component_qtr_report
+label: 'Agency Component Quarterly Report'
 module: views
 description: ''
 tag: ''
@@ -174,14 +175,61 @@ display:
           hide_empty: false
           default_field_elements: true
       fields:
-        field_qtr_perfected_less_than_10:
-          id: field_qtr_perfected_less_than_10
-          table: node__field_qtr_perfected_less_than_10
-          field: field_qtr_perfected_less_than_10
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Perfected, closed, less than ten'
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_qtr_requests_received:
+          id: field_qtr_requests_received
+          table: node__field_qtr_requests_received
+          field: field_qtr_requests_received
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Requests Received in Reporting Quarter'
           exclude: false
           alter:
             alter_text: false
@@ -223,8 +271,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: list_default
-          settings: {  }
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -236,14 +286,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_qtr_perfected_10_or_more:
-          id: field_qtr_perfected_10_or_more
-          table: node__field_qtr_perfected_10_or_more
-          field: field_qtr_perfected_10_or_more
+        field_qtr_requests_processed:
+          id: field_qtr_requests_processed
+          table: node__field_qtr_requests_processed
+          field: field_qtr_requests_processed
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Ten or more Perfected requests'
+          label: 'Requests Processed in Reporting Quarter'
           exclude: false
           alter:
             alter_text: false
@@ -285,8 +335,74 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: list_default
-          settings: {  }
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_qtr_requests_backlogged:
+          id: field_qtr_requests_backlogged
+          table: node__field_qtr_requests_backlogged
+          field: field_qtr_requests_backlogged
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Requests Backlogged as of End of Reporting Quarter'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -314,28 +430,53 @@ display:
           id: type
           table: node_field_data
           field: type
+          value:
+            qtr_component: qtr_component
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        field_qtr_report_year_value:
+          id: field_qtr_report_year_value
+          table: node__field_qtr_report_year
+          field: field_qtr_report_year_value
           relationship: none
           group_type: group
           admin_label: ''
-          operator: in
-          value:
-            agency_qtr: agency_qtr
+          operator: or
+          value: {  }
           group: 1
-          exposed: false
+          exposed: true
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: field_qtr_report_year_value_op
+            label: Year
             description: ''
             use_operator: false
-            operator: ''
-            identifier: ''
+            operator: field_qtr_report_year_value_op
+            identifier: field_qtr_report_year_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              page_creator: '0'
+              layout_manager: '0'
+              page_reviewer: '0'
+              landing_page_creator: '0'
+              landing_page_reviewer: '0'
+              media_creator: '0'
+              media_manager: '0'
+              agency_component_creator: '0'
+              agency_component_reviewer: '0'
+              agency_administrator: '0'
+              agency_manager: '0'
+              non_sso: '0'
+              qtr_component_creator: '0'
+              qtr_component_reviewer: '0'
+              agency_qtr_creator: '0'
+              agency_qtr_reviewer: '0'
             reduce: false
-            argument: null
           is_grouped: false
           group_info:
             label: ''
@@ -348,9 +489,64 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
+          reduce_duplicates: false
+          plugin_id: list_field
+        field_qtr_report_quarter_value:
+          id: field_qtr_report_quarter_value
+          table: node__field_qtr_report_quarter
+          field: field_qtr_report_quarter_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_qtr_report_quarter_value_op
+            label: Quarter
+            description: ''
+            use_operator: false
+            operator: field_qtr_report_quarter_value_op
+            identifier: field_qtr_report_quarter_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              page_creator: '0'
+              layout_manager: '0'
+              page_reviewer: '0'
+              landing_page_creator: '0'
+              landing_page_reviewer: '0'
+              media_creator: '0'
+              media_manager: '0'
+              agency_component_creator: '0'
+              agency_component_reviewer: '0'
+              agency_administrator: '0'
+              agency_manager: '0'
+              non_sso: '0'
+              qtr_component_creator: '0'
+              qtr_component_reviewer: '0'
+              agency_qtr_creator: '0'
+              agency_qtr_reviewer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
       sorts:
         created:
           id: created
@@ -378,9 +574,11 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_qtr_perfected_10_or_more'
-        - 'config:field.storage.node.field_qtr_perfected_less_than_10'
+        - 'config:field.storage.node.field_qtr_requests_backlogged'
+        - 'config:field.storage.node.field_qtr_requests_processed'
+        - 'config:field.storage.node.field_qtr_requests_received'

@@ -1,0 +1,14 @@
+uuid: 246109ac-0332-496d-bedb-e1cb4ab2042b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.agency_qtr_reviewer
+  module:
+    - user
+id: user_remove_role_action.agency_qtr_reviewer
+label: 'Remove the Agency Quarter reviewer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: agency_qtr_reviewer

@@ -1,20 +1,20 @@
-uuid: 3ea98ad2-dbd3-409d-80e2-723228a66ba2
+uuid: 170d02d2-4d83-4835-b3ee-f0f167748c4a
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_qtr_perfected_less_than_10
-    - node.type.qtr_component
+    - node.type.agency_qtr
   module:
     - options
-id: node.qtr_component.field_qtr_perfected_less_than_10
+id: node.agency_qtr.field_qtr_perfected_less_than_10
 field_name: field_qtr_perfected_less_than_10
 entity_type: node
-bundle: qtr_component
+bundle: agency_qtr
 label: 'Perfected, closed, less than ten'
 description: 'Of the ten or fewer requests identified in your previous response, please select the number of requests your agency has closed during the fiscal year.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

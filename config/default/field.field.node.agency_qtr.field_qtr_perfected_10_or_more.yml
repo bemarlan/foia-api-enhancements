@@ -1,20 +1,20 @@
-uuid: 03fcfaed-5379-4bb0-bd27-7bd382d5eccc
+uuid: ba3c4070-9792-4ed0-99dd-536e144f3beb
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_qtr_perfected_10_or_more
-    - node.type.qtr_component
+    - node.type.agency_qtr
   module:
     - options
-id: node.qtr_component.field_qtr_perfected_10_or_more
+id: node.agency_qtr.field_qtr_perfected_10_or_more
 field_name: field_qtr_perfected_10_or_more
 entity_type: node
-bundle: qtr_component
+bundle: agency_qtr
 label: 'Ten or more Perfected requests'
 description: 'Did your agency have 10 or more perfected requests pending at the end of the last fiscal year? If so, please select the number 10. If your agency had fewer than 10, please select the correct number.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

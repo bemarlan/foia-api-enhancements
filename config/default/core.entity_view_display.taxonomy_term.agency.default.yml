@@ -5,11 +5,21 @@ dependencies:
   config:
     - field.field.taxonomy_term.agency.field_agency_abbreviation
     - field.field.taxonomy_term.agency.field_agency_category
+    - field.field.taxonomy_term.agency.field_agency_component_qtr_repor
+    - field.field.taxonomy_term.agency.field_agency_quarterly_report
     - field.field.taxonomy_term.agency.field_agency_seal
     - taxonomy.vocabulary.agency
   module:
     - image
+    - panelizer
     - text
+    - viewfield
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: taxonomy_term.agency.default
 targetEntityType: taxonomy_term
 bundle: agency
@@ -23,7 +33,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_agency_abbreviation:
-    weight: 3
+    weight: 2
     label: above
     settings:
       link_to_entity: false
@@ -31,12 +41,32 @@ content:
     type: string
     region: content
   field_agency_category:
-    weight: 4
+    weight: 3
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_agency_component_qtr_repor:
+    weight: 5
+    label: above
+    settings:
+      view_title: hidden
+      always_build_output: 0
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+  field_agency_quarterly_report:
+    weight: 4
+    label: above
+    settings:
+      view_title: hidden
+      always_build_output: 0
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
     region: content
   field_agency_seal:
     weight: 1

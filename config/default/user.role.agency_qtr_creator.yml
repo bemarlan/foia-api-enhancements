@@ -1,26 +1,26 @@
-uuid: 8aeb819b-1047-4002-8834-4902f1551ec0
+uuid: 08547fea-a790-4f7a-8110-8cdc4d11c33e
 langcode: en
 status: true
 dependencies: {  }
-id: agency_page_creator
-label: 'Agency page creator'
-weight: 15
+id: agency_qtr_creator
+label: 'Agency Quarter creator'
+weight: 17
 is_admin: false
 permissions:
   - 'access image_browser entity browser pages'
   - 'access media_browser entity browser pages'
   - 'access panels in-place editing'
-  - 'administer panelizer node agency_page content'
-  - 'administer panelizer node agency_page layout'
+  - 'administer panelizer node agency_qtr content'
+  - 'administer panelizer node agency_qtr layout'
   - 'change layouts in place editing'
-  - 'create agency_page content'
+  - 'create agency_qtr content'
   - 'create url aliases'
-  - 'edit own agency_page content'
+  - 'edit own agency_qtr content'
   - 'use draft_draft transition'
   - 'use draft_needs_review transition'
   - 'use needs_review_needs_review transition'
   - 'use text format rich_text'
-  - 'view agency_page revisions'
+  - 'view agency_qtr revisions'
   - 'view any unpublished content'
   - 'view latest version'
   - 'view own unpublished content'
