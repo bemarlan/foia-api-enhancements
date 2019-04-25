@@ -1,0 +1,46 @@
+uuid: f706652a-d013-425c-abce-586bd5d2a2e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_qrtly_data_for_components
+    - taxonomy.vocabulary.agency
+    - views.view.agency_component_qtr_report
+  module:
+    - viewfield
+id: taxonomy_term.agency.field_qrtly_data_for_components
+field_name: field_qrtly_data_for_components
+entity_type: taxonomy_term
+bundle: agency
+label: 'Quarterly data for components'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    token_help: ''
+    display_id: default
+    arguments: ''
+    target_uuid: 8e455778-9eb5-48de-aff0-d21fab8077be
+default_value_callback: ''
+settings:
+  force_default: 0
+  allowed_views:
+    agency_component_qtr_report: agency_component_qtr_report
+    agency_report: 0
+    content: 0
+    file_entity_files: 0
+    foia_requests: 0
+    media: 0
+    moderation_history: 0
+    user_admin_people: 0
+    taxonomy_term: 0
+  allowed_display_types:
+    default: default
+    data_export: 0
+    entity_browser: 0
+    feed: 0
+    page: 0
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

@@ -1,0 +1,23 @@
+uuid: bd71a944-d62b-415e-95ef-85814474a927
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qtr_requests_backlogged
+    - node.type.qtr_component
+id: node.qtr_component.field_qtr_requests_backlogged
+field_name: field_qtr_requests_backlogged
+entity_type: node
+bundle: qtr_component
+label: 'Requests Backlogged as of End of Reporting Quarter'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

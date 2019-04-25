@@ -1,0 +1,22 @@
+uuid: 0b67f69e-aa58-4579-a1af-48fe520a5d3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.agency_qtr
+id: node.agency_qtr.status
+field_name: status
+entity_type: node
+bundle: agency_qtr
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

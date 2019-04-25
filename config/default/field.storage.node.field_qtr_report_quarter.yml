@@ -1,0 +1,37 @@
+uuid: 01590ba6-f1ae-4687-b8cd-a47d19242fdc
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_qtr_report_quarter
+field_name: field_qtr_report_quarter
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: Q1
+    -
+      value: 1
+      label: Q2
+    -
+      value: 2
+      label: Q3
+    -
+      value: 3
+      label: Q4
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

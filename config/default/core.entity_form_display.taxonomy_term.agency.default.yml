@@ -6,12 +6,15 @@ dependencies:
     - field.field.taxonomy_term.agency.field_agency_abbreviation
     - field.field.taxonomy_term.agency.field_agency_category
     - field.field.taxonomy_term.agency.field_agency_seal
+    - field.field.taxonomy_term.agency.field_qrtly_data_for_agencies
+    - field.field.taxonomy_term.agency.field_qrtly_data_for_components
     - image.style.thumbnail
     - taxonomy.vocabulary.agency
   module:
     - image
     - path
     - text
+    - viewfield
 id: taxonomy_term.agency.default
 targetEntityType: taxonomy_term
 bundle: agency
@@ -46,6 +49,18 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_qrtly_data_for_agencies:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: viewfield_select
+    region: content
+  field_qrtly_data_for_components:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: viewfield_select
     region: content
   name:
     type: string_textfield

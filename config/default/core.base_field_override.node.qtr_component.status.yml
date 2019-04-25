@@ -1,0 +1,22 @@
+uuid: da8bd3f5-a130-4731-a439-825d4c99f21f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.qtr_component
+id: node.qtr_component.status
+field_name: status
+entity_type: node
+bundle: qtr_component
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

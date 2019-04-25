@@ -1,5 +1,6 @@
 module:
   address: 0
+  auto_entitylabel: 0
   autologout: 0
   basic_auth: 0
   block: 0
@@ -106,6 +107,9 @@ module:
   user: 0
   video_embed_field: 0
   video_embed_media: 0
+  viewfield: 0
+  views_aggregator: 0
+  views_aggregator_more_functions: 0
   views_data_export: 0
   views_infinite_scroll: 0
   views_ui: 0

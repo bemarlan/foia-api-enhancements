@@ -1,0 +1,25 @@
+uuid: cd398de5-0423-4876-8588-fac1591cfb37
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - taxonomy
+    - viewfield
+    - views
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: taxonomy_term.field_qrtly_data_for_agencies
+field_name: field_qrtly_data_for_agencies
+entity_type: taxonomy_term
+type: viewfield
+settings:
+  target_type: view
+module: viewfield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

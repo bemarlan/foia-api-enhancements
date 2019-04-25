@@ -1,0 +1,14 @@
+uuid: 8c92b719-8fa8-496a-9201-29a2a2822e0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.agency_qtr_reviewer
+  module:
+    - user
+id: user_add_role_action.agency_qtr_reviewer
+label: 'Add the Agency Quarterly Report reviewer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: agency_qtr_reviewer

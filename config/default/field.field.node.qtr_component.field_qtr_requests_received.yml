@@ -1,0 +1,23 @@
+uuid: 9d58dbff-55af-4fcd-a138-be00adac5f46
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qtr_requests_received
+    - node.type.qtr_component
+id: node.qtr_component.field_qtr_requests_received
+field_name: field_qtr_requests_received
+entity_type: node
+bundle: qtr_component
+label: 'Requests Received in Reporting Quarter'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

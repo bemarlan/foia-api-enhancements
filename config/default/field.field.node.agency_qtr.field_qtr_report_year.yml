@@ -1,0 +1,21 @@
+uuid: c1c224da-9a0e-42de-8ed4-834cd0ac52a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qtr_report_year
+    - node.type.agency_qtr
+  module:
+    - options
+id: node.agency_qtr.field_qtr_report_year
+field_name: field_qtr_report_year
+entity_type: node
+bundle: agency_qtr
+label: Year
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

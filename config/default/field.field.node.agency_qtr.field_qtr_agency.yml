@@ -1,0 +1,29 @@
+uuid: 5b3fb551-839f-4d52-b00e-91dcf6687879
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qtr_agency
+    - node.type.agency_qtr
+    - taxonomy.vocabulary.agency
+id: node.agency_qtr.field_qtr_agency
+field_name: field_qtr_agency
+entity_type: node
+bundle: agency_qtr
+label: Agency
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      agency: agency
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

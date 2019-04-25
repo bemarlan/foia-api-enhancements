@@ -80,9 +80,11 @@ display:
         options:
           view_modes:
             'entity:node':
-              page: teaser
-              landing_page: teaser
               agency_component: default
+              agency_qtr: default
+              landing_page: teaser
+              page: teaser
+              qtr_component: default
       fields:
         rendered:
           table: search_api_index_content

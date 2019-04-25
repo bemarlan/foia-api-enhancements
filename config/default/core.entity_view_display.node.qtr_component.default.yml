@@ -1,0 +1,73 @@
+uuid: af0c5f5b-fb76-4f87-aeec-01336830d185
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.qtr_component.field_qtr_agency_component
+    - field.field.node.qtr_component.field_qtr_report_quarter
+    - field.field.node.qtr_component.field_qtr_report_year
+    - field.field.node.qtr_component.field_qtr_requests_backlogged
+    - field.field.node.qtr_component.field_qtr_requests_processed
+    - field.field.node.qtr_component.field_qtr_requests_received
+    - node.type.qtr_component
+  module:
+    - options
+    - user
+id: node.qtr_component.default
+targetEntityType: node
+bundle: qtr_component
+mode: default
+content:
+  field_qtr_agency_component:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_qtr_report_quarter:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_qtr_report_year:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_qtr_requests_backlogged:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_qtr_requests_processed:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_qtr_requests_received:
+    weight: 105
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

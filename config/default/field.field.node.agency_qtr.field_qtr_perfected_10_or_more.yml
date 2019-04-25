@@ -1,0 +1,21 @@
+uuid: 572572b2-6a96-41dd-9b53-1be77d316f51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qtr_perfected_10_or_more
+    - node.type.agency_qtr
+  module:
+    - options
+id: node.agency_qtr.field_qtr_perfected_10_or_more
+field_name: field_qtr_perfected_10_or_more
+entity_type: node
+bundle: agency_qtr
+label: 'Ten or more Perfected requests'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

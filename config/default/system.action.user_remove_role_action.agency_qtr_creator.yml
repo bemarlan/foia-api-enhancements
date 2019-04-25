@@ -1,0 +1,14 @@
+uuid: a11049c4-671c-4fec-985e-a1562b192a24
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.agency_qtr_creator
+  module:
+    - user
+id: user_remove_role_action.agency_qtr_creator
+label: 'Remove the Agency Quarterly Report creator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: agency_qtr_creator

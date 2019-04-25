@@ -1,0 +1,18 @@
+uuid: 5c7a1a8d-db93-442f-a3bd-c64d7bdf07b6
+langcode: en
+status: true
+dependencies: {  }
+id: qtr_component_reviewer
+label: 'Agency Component Quarterly Report reviewer'
+weight: 14
+is_admin: false
+permissions:
+  - 'access content overview'
+  - 'delete any qtr_component content'
+  - 'edit any qtr_component content'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_published transition'
+  - 'use published_archived transition'
+  - 'use published_published transition'
+  - 'view moderation states'
