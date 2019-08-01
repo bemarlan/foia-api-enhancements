@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.agency_component.field_public_liaisons
     - field.field.node.agency_component.field_reading_rooms
     - field.field.node.agency_component.field_receiver
+    - field.field.node.agency_component.field_rep_start
     - field.field.node.agency_component.field_request_data_year
     - field.field.node.agency_component.field_request_submission_form
     - field.field.node.agency_component.field_service_centers
@@ -337,6 +338,12 @@ content:
       override_labels: false
     third_party_settings: {  }
     type: inline_entity_form_complex
+    region: content
+  field_rep_start:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_request_data_year:
     weight: 27
