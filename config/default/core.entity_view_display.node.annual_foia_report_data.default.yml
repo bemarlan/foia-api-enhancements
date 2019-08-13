@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_fees_x
     - field.field.node.annual_foia_report_data.field_foia_annual_report_yr
     - field.field.node.annual_foia_report_data.field_foia_pers_costs_ix
+    - field.field.node.annual_foia_report_data.field_foia_requests_v_a
     - field.field.node.annual_foia_report_data.field_foia_requests_va
     - field.field.node.annual_foia_report_data.field_foia_requests_vb1
     - field.field.node.annual_foia_report_data.field_foia_requests_vb2
@@ -310,6 +311,8 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_proc_req_viic3
     - field.field.node.annual_foia_report_data.field_req_viiia
     - field.field.node.annual_foia_report_data.field_req_viiib
+    - field.field.node.annual_foia_report_data.field_statute
+    - field.field.node.annual_foia_report_data.field_statute_iv
     - field.field.node.annual_foia_report_data.field_sub_xia
     - field.field.node.annual_foia_report_data.field_sub_xib
     - node.type.annual_foia_report_data
@@ -317,6 +320,7 @@ dependencies:
     - datetime
     - entity_reference_revisions
     - panelizer
+    - tablefield
     - text
     - user
 third_party_settings:
@@ -458,6 +462,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_foia_requests_v_a:
+    weight: 319
+    label: above
+    settings:
+      row_header: 1
+      column_header: 0
+    third_party_settings: {  }
+    type: tablefield
     region: content
   field_foia_requests_va:
     type: entity_reference_revisions_entity_view
@@ -2848,6 +2861,24 @@ content:
   field_req_viiib:
     type: entity_reference_revisions_entity_view
     weight: 307
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_statute:
+    weight: 318
+    label: above
+    settings:
+      row_header: 1
+      column_header: 0
+    third_party_settings: {  }
+    type: tablefield
+    region: content
+  field_statute_iv:
+    type: entity_reference_revisions_entity_view
+    weight: 317
     label: above
     settings:
       view_mode: default
