@@ -322,6 +322,7 @@ third_party_settings:
   field_group:
     group_iv_exemption_3_statutes:
       children:
+        - field_statute_iv
         - field_footnotes_iv
       parent_name: group_tabs
       weight: 3
@@ -354,19 +355,7 @@ third_party_settings:
     group_overall_vb1_main:
       children:
         - field_foia_requests_vb1
-        - field_overall_vb1_full_grants
-        - field_overall_vb1_part_grants_de
-        - field_overall_vb1_full_denials_e
-        - field_overall_vb1_no_rec
-        - field_overall_vb1_rec_ref_to_an_
-        - field_overall_vb1_req_withdrawn
-        - field_overall_vb1_fee_related_re
-        - field_overall_vb1_rec_not_desc
-        - field_overall_vb1_imp_req_oth_re
-        - field_overall_vb1_not_agency_rec
-        - field_overall_vb1_dup_request
-        - field_overall_vb1_oth
-        - field_overall_vb1_total
+        - group_agency_overall_v_b_1_
       parent_name: group_tabs
       weight: 5
       format_type: tab
@@ -1620,6 +1609,55 @@ third_party_settings:
         classes: ''
         direction: vertical
       label: Tabs
+    group_agency_overall_v_b_1_:
+      children:
+        - group_agency_overall_main
+        - group_agency_overall_number_of_f
+      parent_name: group_overall_vb1_main
+      weight: 10
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'Agency Overall V. B. (1).'
+    group_agency_overall_main:
+      children:
+        - field_overall_vb1_full_grants
+        - field_overall_vb1_part_grants_de
+        - field_overall_vb1_full_denials_e
+        - field_overall_vb1_total
+      parent_name: group_agency_overall_v_b_1_
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Agency Overall Main'
+    group_agency_overall_number_of_f:
+      children:
+        - field_overall_vb1_no_rec
+        - field_overall_vb1_rec_ref_to_an_
+        - field_overall_vb1_req_withdrawn
+        - field_overall_vb1_fee_related_re
+        - field_overall_vb1_rec_not_desc
+        - field_overall_vb1_imp_req_oth_re
+        - field_overall_vb1_not_agency_rec
+        - field_overall_vb1_dup_request
+        - field_overall_vb1_oth
+      parent_name: group_agency_overall_v_b_1_
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Agency Overall Number of Full Denials Based on Reasons Other than Exemptions'
 id: node.annual_foia_report_data.default
 targetEntityType: node
 bundle: annual_foia_report_data
@@ -1781,12 +1819,12 @@ content:
     weight: 48
     region: content
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: Agency
+      title_plural: Agencies
       edit_mode: open
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: foia_req_va
     third_party_settings: {  }
   field_foia_requests_vb1:
     type: entity_reference_paragraphs
@@ -1910,7 +1948,7 @@ content:
     region: content
   field_footnotes_iv:
     type: text_textarea
-    weight: 44
+    weight: 152
     region: content
     settings:
       rows: 5
@@ -2236,91 +2274,91 @@ content:
     third_party_settings: {  }
   field_overall_vb1_dup_request:
     type: number
-    weight: 20
+    weight: 21
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_fee_related_re:
     type: number
-    weight: 16
+    weight: 17
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_full_denials_e:
     type: number
-    weight: 12
+    weight: 13
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_full_grants:
     type: number
-    weight: 10
+    weight: 11
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_imp_req_oth_re:
     type: number
-    weight: 18
+    weight: 19
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_no_rec:
     type: number
-    weight: 13
+    weight: 14
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_not_agency_rec:
     type: number
-    weight: 19
+    weight: 20
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_oth:
     type: number
-    weight: 21
+    weight: 22
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_part_grants_de:
     type: number
-    weight: 11
+    weight: 12
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_rec_not_desc:
     type: number
-    weight: 17
+    weight: 18
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_rec_ref_to_an_:
     type: number
-    weight: 14
+    weight: 15
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_req_withdrawn:
     type: number
-    weight: 15
+    weight: 16
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_overall_vb1_total:
     type: number
-    weight: 22
+    weight: 14
     region: content
     settings:
       placeholder: ''
