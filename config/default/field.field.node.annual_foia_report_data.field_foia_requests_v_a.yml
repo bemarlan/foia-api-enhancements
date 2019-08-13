@@ -1,0 +1,73 @@
+uuid: 13ceeb36-30ae-4ef4-8029-eb26f38c9f60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_foia_requests_v_a
+    - node.type.annual_foia_report_data
+  module:
+    - tablefield
+    - tablefield_required
+third_party_settings:
+  tablefield_required:
+    required_rows: ''
+    required_cols: ''
+    multivalue_inherit: false
+id: node.annual_foia_report_data.field_foia_requests_v_a
+field_name: field_foia_requests_v_a
+entity_type: node
+bundle: annual_foia_report_data
+label: 'FOIA Requests V. A.'
+description: 'Component abbreviations must match those set up on the ''Agency Information'' section. If the report is not broken out by component, the agency abbreviation must be entered. If a component is entered, all other fields must be filled in. All values must be non-negative integers. The sum of all columns must match the number entered in the V.A. section, ''Number of Requests Processed in Fiscal Year'' for the component, and for the agency overall.'
+required: true
+translatable: false
+default_value:
+  -
+    rebuild:
+      cols: '5'
+      rows: '5'
+    value:
+      0:
+        - 'Agency / Component'
+        - 'Number of Requests Pending as of Start of Fiscal Year'
+        - 'Number of Requests Received in Fiscal Year'
+        - 'Number of Requests Processed in Fiscal Year'
+        - 'Number of Requests Pending as of End of Fiscal Year'
+      1:
+        - 'Agency Overall'
+        - ''
+        - ''
+        - ''
+        - ''
+      2:
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+      3:
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+      4:
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+      caption: 'V. FOIA REQUESTS / A. Received, Processed and Pending FOIA Requests'
+    format: null
+    caption: 'V. FOIA REQUESTS / A. Received, Processed and Pending FOIA Requests'
+default_value_callback: ''
+settings:
+  export: 0
+  restrict_rebuild: 1
+  restrict_import: 1
+  lock_values: 0
+  cell_processing: '0'
+  empty_rules:
+    ignore_table_structure: 1
+    ignore_table_header: 1
+field_type: tablefield
