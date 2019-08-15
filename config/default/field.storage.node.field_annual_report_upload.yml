@@ -1,21 +1,24 @@
-uuid: 12f9412f-a799-4f80-9fe9-45968af7d5a2
+uuid: c7c5b7f2-0029-46d5-840a-770894dc1179
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
+    - file
     - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_processing_costs
-field_name: field_processing_costs
+id: node.field_annual_report_upload
+field_name: field_annual_report_upload
 entity_type: node
-type: decimal
+type: file
 settings:
-  precision: 14
-  scale: 2
-module: core
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
 locked: false
 cardinality: 1
 translatable: true
