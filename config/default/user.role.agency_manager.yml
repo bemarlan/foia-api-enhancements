@@ -12,6 +12,8 @@ label: 'Agency Manager'
 weight: 11
 is_admin: null
 permissions:
+  - 'access content overview'
+  - 'access toolbar'
   - 'add foia personnel entities'
   - 'create annual_foia_report_data content'
   - 'create field_submission_api'
@@ -45,4 +47,6 @@ permissions:
   - 'view files'
   - 'view own field_submission_api'
   - 'view own field_submission_api_secret'
+  - 'view own unpublished content'
   - 'view the administration theme'
+  - 'view unpublished paragraphs'
