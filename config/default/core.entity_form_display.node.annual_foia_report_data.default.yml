@@ -12,12 +12,12 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_admin_app_vic5
     - field.field.node.annual_foia_report_data.field_admin_app_viie
     - field.field.node.annual_foia_report_data.field_agency
+    - field.field.node.annual_foia_report_data.field_agency_abbr
     - field.field.node.annual_foia_report_data.field_agency_components
     - field.field.node.annual_foia_report_data.field_date_prepared
     - field.field.node.annual_foia_report_data.field_fees_x
     - field.field.node.annual_foia_report_data.field_foia_annual_report_yr
     - field.field.node.annual_foia_report_data.field_foia_pers_costs_ix
-    - field.field.node.annual_foia_report_data.field_foia_requests_v_a
     - field.field.node.annual_foia_report_data.field_foia_requests_va
     - field.field.node.annual_foia_report_data.field_foia_requests_vb1
     - field.field.node.annual_foia_report_data.field_foia_requests_vb2
@@ -311,7 +311,6 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_proc_req_viic3
     - field.field.node.annual_foia_report_data.field_req_viiia
     - field.field.node.annual_foia_report_data.field_req_viiib
-    - field.field.node.annual_foia_report_data.field_statute
     - field.field.node.annual_foia_report_data.field_statute_iv
     - field.field.node.annual_foia_report_data.field_sub_xia
     - field.field.node.annual_foia_report_data.field_sub_xib
@@ -322,13 +321,11 @@ dependencies:
     - datetime
     - field_group
     - paragraphs
-    - tablefield
     - text
 third_party_settings:
   field_group:
     group_iv_exemption_3_statutes:
       children:
-        - field_statute
         - field_statute_iv
         - field_footnotes_iv
       parent_name: group_tabs
@@ -343,7 +340,6 @@ third_party_settings:
       label: 'IV. Exemption 3 Statutes'
     group_v_a_foia_requests_received:
       children:
-        - field_foia_requests_v_a
         - field_foia_requests_va
         - field_overall_req_pend_start_yr
         - field_overall_req_received_yr
@@ -391,6 +387,7 @@ third_party_settings:
     group_agency_info:
       children:
         - field_agency
+        - field_agency_abbr
         - field_agency_components
         - field_foia_annual_report_yr
         - field_date_prepared
@@ -1577,8 +1574,8 @@ third_party_settings:
       label: 'XII.E.(2). COMPARISON OF NUMBERS OF ADMINISTRATIVE APPEALS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- BACKLOGGED APPEALS'
     group_xiie1_num_appeals_recd:
       children:
-        - field_overall_xiie1_proc_last_yr
         - field_overall_xiie1_received_cur
+        - field_overall_xiie1_proc_last_yr
       parent_name: group_xii_e_1_comparison_of_numb
       weight: 36
       format_type: tab
@@ -1776,8 +1773,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_agency_components:
+  field_agency_abbr:
     weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_agency_components:
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
@@ -1786,7 +1791,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_date_prepared:
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -1804,7 +1809,7 @@ content:
     third_party_settings: {  }
     region: content
   field_foia_annual_report_yr:
-    weight: 4
+    weight: 5
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -1821,13 +1826,6 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
-  field_foia_requests_v_a:
-    weight: 151
-    settings:
-      input_type: textfield
-    third_party_settings: {  }
-    type: tablefield
     region: content
   field_foia_requests_va:
     type: entity_reference_paragraphs
@@ -3982,7 +3980,7 @@ content:
     type: number
     region: content
   field_overall_xiie1_proc_last_yr:
-    weight: 43
+    weight: 45
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -4111,13 +4109,6 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
-  field_statute:
-    weight: 7
-    settings:
-      input_type: textfield
-    third_party_settings: {  }
-    type: tablefield
     region: content
   field_statute_iv:
     type: entity_reference_paragraphs
