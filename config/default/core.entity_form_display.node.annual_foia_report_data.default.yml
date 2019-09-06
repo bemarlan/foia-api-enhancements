@@ -133,7 +133,6 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_vic2_rec_refer_ini
     - field.field.node.annual_foia_report_data.field_overall_vic2_req_in_lit
     - field.field.node.annual_foia_report_data.field_overall_vic2_req_withdrawn
-    - field.field.node.annual_foia_report_data.field_overall_vic3_desc_oth_reas
     - field.field.node.annual_foia_report_data.field_overall_vic3_num_relied_up
     - field.field.node.annual_foia_report_data.field_overall_vic3_total
     - field.field.node.annual_foia_report_data.field_overall_vic4_avg_num_days
@@ -459,7 +458,6 @@ third_party_settings:
         - field_footnotes_vic2
       parent_name: group_tabs
       weight: 11
-
       format_type: tab
       format_settings:
         id: ''
@@ -584,7 +582,7 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-      label: 'VI.C.(5). -- 10th'
+      label: 'Agency Overall 10th'
     group_vi_c_5_9th:
       children:
         - field_overall_vic5_date_9
@@ -598,7 +596,7 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-      label: 'VI.C.(5). -- 9th'
+      label: 'Agency Overall 9th'
     group_vi_c_5_8th:
       children:
         - field_overall_vic5_date_8
@@ -612,7 +610,7 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-      label: 'VI.C.(5). -- 8th'
+      label: 'Agency Overall 8th'
     group_vi_c_5_7th:
       children:
         - field_overall_vic5_date_7
@@ -747,7 +745,7 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-      label: 'VII.A. FOIA REQUESTS -- Simple'
+      label: 'Agency Overall -- Simple'
     group_vii_a_foia_requests_comple:
       children:
         - field_overall_viia_comp_med
@@ -763,7 +761,7 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-      label: 'VII.A. FOIA REQUESTS -- Complex'
+      label: 'Agency Overall -- Complex'
     group_vii_a_foia_requests_expedi:
       children:
         - field_overall_viia_exp_med
@@ -779,7 +777,7 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-      label: 'VII.A. FOIA REQUESTS -- Expedited Processing'
+      label: 'Agency Overall -- Expedited Processing'
     group_vii_b_processed_requests_r:
       children:
         - group_vii_b_processed_requests_s
@@ -2920,14 +2918,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
-    region: content
-  field_overall_vic3_desc_oth_reas:
-    weight: 25
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
     region: content
   field_overall_vic3_num_relied_up:
     weight: 26
