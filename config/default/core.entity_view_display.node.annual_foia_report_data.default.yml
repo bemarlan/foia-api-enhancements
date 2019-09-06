@@ -84,7 +84,6 @@ dependencies:
     - field.field.node.annual_foia_report_data.field_overall_vb1_rec_ref_to_an_
     - field.field.node.annual_foia_report_data.field_overall_vb1_req_withdrawn
     - field.field.node.annual_foia_report_data.field_overall_vb1_total
-    - field.field.node.annual_foia_report_data.field_overall_vb2
     - field.field.node.annual_foia_report_data.field_overall_vb2_total
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_1
     - field.field.node.annual_foia_report_data.field_overall_vb3_ex_2
@@ -1014,15 +1013,6 @@ content:
     settings:
       thousand_separator: ''
       prefix_suffix: true
-    third_party_settings: {  }
-  field_overall_vb2:
-    type: entity_reference_revisions_entity_view
-    weight: 33
-    region: content
-    label: above
-    settings:
-      view_mode: default
-      link: ''
     third_party_settings: {  }
   field_overall_vb2_total:
     type: number_integer
