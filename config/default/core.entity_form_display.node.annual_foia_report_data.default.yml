@@ -1469,7 +1469,7 @@ third_party_settings:
         id: ''
         classes: ''
         direction: vertical
-      label: 'XII.D.(1). COMPARISON OF NUMBERS OF REQUESTS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- REQUESTS RECEIVED AND PROCESSED'
+      label: 'XII.D.(1). COMPARISON OF NUMBERS OF REQUESTS FROM PREVIOUS AND CURRENT ANNUAL REPORT'
     group_xiid1_num_reqs_proc:
       children:
         - field_overall_xiid1_proc_last_yr
@@ -1513,7 +1513,7 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-      label: 'XII.D.(2). COMPARISON OF NUMBERS OF REQUESTS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- BACKLOGGED REQUESTS'
+      label: 'XII.D.(2). COMPARISON OF BACKLOGGED REQUESTS FROM PREVIOUS AND CURRENT ANNUAL REPORT'
     group_xii_e_1_comparison_of_numb:
       children:
         - group_xiie1_num_appeals_recd
@@ -1525,7 +1525,7 @@ third_party_settings:
         id: ''
         classes: ''
         direction: vertical
-      label: 'XII.E.(1). COMPARISON OF NUMBERS OF ADMINISTRATIVE APPEALS FROM PREVIOUS AND CURRENT ANNUAL REPORT -- APPEALS REC''D AND PROC''D'
+      label: 'XII.E.(1). COMPARISON OF NUMBERS OF ADMINISTRATIVE APPEALS FROM PREVIOUS AND CURRENT ANNUAL REPORT'
     group_xii_e_2_comparison_of_numb:
       children:
         - field_foia_xiie2
