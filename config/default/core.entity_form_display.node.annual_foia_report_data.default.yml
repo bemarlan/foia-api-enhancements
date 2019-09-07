@@ -348,7 +348,7 @@ third_party_settings:
         - group_agency_overall_v_a_wrapper
         - field_footnotes_va
       parent_name: group_tabs
-      weight: 5
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -363,7 +363,7 @@ third_party_settings:
         - group_agency_overall_v_b_1_
         - field_footnotes_vb1
       parent_name: group_tabs
-      weight: 6
+      weight: 5
       format_type: tab
       format_settings:
         label: 'V.B.(1). DISPOSITION OF FOIA REQUESTS -- ALL PROCESSED REQUESTS '
@@ -403,7 +403,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'If a component or the agency does not have other reasons to list, users should enter “N/A” for the Description and “0” for the Number of Times “Other” Reason was Relied Upon.'
         required_fields: true
       label: 'V.B.(2). DISPOSITION OF FOIA REQUESTS -- "OTHER" REASONS FOR "FULL DENIALS BASED ON REASONS OTHER THAN EXEMPTIONS"'
     group_v_b_3_disposition_of_foia_:
@@ -524,7 +524,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'If a component or the agency does not have other reasons to list, users should enter “N/A” for the Description and “0” for the Number of Times “Other” Reason was Relied Upon.'
         required_fields: true
       label: 'VI.C.(3). REASONS FOR DENIAL ON APPEAL -- "OTHER" REASONS '
     group_vi_c_4_response_time_for_a:
@@ -1154,7 +1154,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Enter “N/A” for Median and Average if the component does not have requests for expedited processing.'
         required_fields: true
       label: 'VIII.A. REQUESTS FOR EXPEDITED PROCESSING'
     group_viii_b_requests_for_fee_wa:
@@ -1172,7 +1172,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'If there are no pending requests for a track, enter “0” for number pending and “N/A” for Median and Average Number of Days.'
         required_fields: true
       label: 'VIII.B. Requests for Fee Waiver'
     group_ix_foia_personnel_and_cost:
@@ -1277,7 +1277,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Users should enter "N/A" for any components of their agency that do not process appeals.'
         required_fields: true
       label: 'XII.A. Backlogs of FOIA Requests and Administrative Appeals'
     group_xii_b_consultations_on_foi:
@@ -1575,8 +1575,8 @@ third_party_settings:
         - group_agency_info
         - group_iv_exemption_3_statutes
         - group_v_a_foia_requests_received
-        - group_v_b_2_disposition_of_foia_
         - group_overall_vb1_main
+        - group_v_b_2_disposition_of_foia_
         - group_v_b_3_disposition_of_foia_
         - group_vi_a_administrative_appeal
         - group_vi_b_disposition_of_admini
@@ -1739,7 +1739,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'If a component or the agency overall does not have ten or more appeals pending as of the end of the fiscal year, complete the excess cells by listing "N/A" for the "Date of Appeal" and "0" for the "Number of Days Pending."'
         required_fields: true
       label: 'VI.C.(5). TEN OLDEST PENDING ADMINISTRATIVE APPEALS'
     group_vii_a_foia_requests_wrap:
@@ -1754,7 +1754,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Enter “N/A” for Median, Average, Lowest or Highest Number of Days if there are no requests for that track.'
         required_fields: true
       label: 'VII.A. FOIA REQUESTS -- RESPONSE TIME FOR ALL PROCESSED PERFECTED REQUESTS'
     group_vii_b_processed_req_wrap:
@@ -1769,7 +1769,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Enter “N/A” for Median, Average, Lowest or Highest Number of Days if there are no requests for that track.'
         required_fields: true
       label: 'VII.B. PROCESSED REQUESTS -- RESPONSE TIME FOR PERFECTED REQUESTS IN WHICH INFORMATION WAS GRANTED'
     group_vii_d_pending_req_wrap:
@@ -1784,7 +1784,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'If there are no pending requests for a track, enter “0” for number pending and “N/A” for Median and Average Number of Days.'
         required_fields: true
       label: 'VII.D. PENDING REQUESTS -- ALL PENDING PERFECTED REQUESTS'
     group_vii_e_pending_req_wrap:
@@ -1799,7 +1799,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'If there are no pending perfected requests for a component, enter “N/A” for Date of Receipt and “0” for Days Pending.'
         required_fields: true
       label: 'VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS'
     group_ix_foia_personnel_cost_wra:
@@ -1829,7 +1829,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'If there are no pending consultations for a component, enter “N/A” for Date of Receipt and “0” for Days Pending.'
         required_fields: true
       label: 'XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY'
     group_xii_d_1_comparison_wrap:
