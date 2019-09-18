@@ -104,9 +104,6 @@
                 "Views Data export format path": "https://www.drupal.org/files/issues/2018-04-20/views_data_export_format_path-2957085-19.patch",
                 "Generate a batch": "https://www.drupal.org/files/issues/2789531-116.patch"
             },
-            "drupal/autosave_form": {
-                "Allows autosave on content creation": "https://www.drupal.org/files/issues/2018-09-02/autosave_form-2924006-15.patch"
-            },
             "drupal/simplesamlphp_auth": {
                 "Fix local dev problem": "https://www.drupal.org/files/issues/2019-03-28/1.17.0-plus-conflict.patch"
             }

@@ -7,6 +7,9 @@ notification:
   message: 'Saving draft...'
   delay: 1000
 allowed_content_entity_types:
+  content_moderation_state:
+    bundles:
+      content_moderation_state: content_moderation_state
   node:
     bundles:
       annual_foia_report_data: annual_foia_report_data
