@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.fees_x.field_agency_component
-    - field.field.paragraph.fees_x.field_perc_costs
+    - field.field.paragraph.fees_x.field_percentage_of_total_costs
     - field.field.paragraph.fees_x.field_total_fees
     - paragraphs.paragraphs_type.fees_x
   module:
@@ -20,7 +20,7 @@ content:
     third_party_settings: {  }
     type: erviews_options_select
     region: content
-  field_perc_costs:
+  field_percentage_of_total_costs:
     weight: 2
     settings:
       placeholder: ''
