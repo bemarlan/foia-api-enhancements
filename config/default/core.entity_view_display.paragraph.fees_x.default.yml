@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.fees_x.field_agency_component
-    - field.field.paragraph.fees_x.field_percentage_of_total_costs
+    - field.field.paragraph.fees_x.field_perc_costs
     - field.field.paragraph.fees_x.field_total_fees
     - paragraphs.paragraphs_type.fees_x
 id: paragraph.fees_x.default
@@ -20,7 +20,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_percentage_of_total_costs:
+  field_perc_costs:
     weight: 4
     label: above
     settings:

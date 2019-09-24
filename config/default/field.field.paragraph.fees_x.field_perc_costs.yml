@@ -1,9 +1,9 @@
-uuid: 9ad2b190-ed53-4729-8498-e0ab3ce5789f
+uuid: f2d934ae-0625-4531-8e91-7549f00b39c6
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_percentage_of_total_costs
+    - field.storage.paragraph.field_perc_costs
     - paragraphs.paragraphs_type.fees_x
   module:
     - foia_autocalc
@@ -12,8 +12,8 @@ third_party_settings:
     autocalc_settings:
       description: ''
       autocalc_config: ''
-id: paragraph.fees_x.field_percentage_of_total_costs
-field_name: field_percentage_of_total_costs
+id: paragraph.fees_x.field_perc_costs
+field_name: field_perc_costs
 entity_type: paragraph
 bundle: fees_x
 label: 'Percentage of Total Costs'
@@ -24,7 +24,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   min: null
-  max: !!float 1
+  max: null
   prefix: ''
   suffix: ''
 field_type: decimal

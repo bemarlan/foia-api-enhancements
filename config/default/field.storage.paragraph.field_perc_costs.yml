@@ -1,4 +1,4 @@
-uuid: f78b6e81-784c-4ea6-9cc7-65d951634d86
+uuid: fe0f2834-54e9-48da-bc16-7a5ffe6d6720
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_percentage_of_total_costs
-field_name: field_percentage_of_total_costs
+id: paragraph.field_perc_costs
+field_name: field_perc_costs
 entity_type: paragraph
 type: decimal
 settings:
