@@ -337,7 +337,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'List all Exemption 3 statutes relied upon to withhold information and the number of times each was relied upon. Enter a single statute in the "Statute" field. Enter data for each component that cited the statute. Multiple components may cite the same statute. Enter the "Information Withheld" and "Case Citation" associated with the statute. If no "Case Citation" is available, enter "N/A." Click "Add Statute" to enter additional statutes. To add a component click the "Add Statute Agency Details" button above the "Agency Overall" fields. The "Agency Overall" field(s) will be autocalculated as you enter data for this section. Data must be entered for each component added.'
         required_fields: true
       label: 'IV. Exemption 3 Statutes'
     group_v_a_foia_requests_received:
@@ -352,7 +352,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Every component that processes requests should be listed, even if they do not have data to report in this section. If the component field is filled in, all other editable fields must be filled in. All values must be non-negative integers. To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" and "Number of Requests Pending as of End of Fiscal Year" field(s) will be autocalculated as you enter data in this section.'
         required_fields: true
       label: 'V.A. FOIA REQUESTS -- RECEIVED, PROCESSED AND PENDING FOIA REQUESTS '
     group_overall_vb1_main:
@@ -366,7 +366,7 @@ third_party_settings:
       format_settings:
         label: 'V.B.(1). DISPOSITION OF FOIA REQUESTS -- ALL PROCESSED REQUESTS '
         formatter: closed
-        description: ''
+        description: 'Every component that processes requests should be listed, even if they do not have data to report in this section. If the component field is filled in, all other editable fields must be filled in. All values must be non-negative integers. To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" and "Total" field(s) will be autocalculated as you enter data in this section. The sum of all columns (calculated column titled \'TOTAL\') must match the number entered in V.A., column \'Number of Requests Processed in Fiscal Year\' for the component, and for the agency overall.'
         required_fields: true
         id: ''
         classes: ''
@@ -384,7 +384,7 @@ third_party_settings:
       format_settings:
         label: 'Agency Info'
         formatter: open
-        description: ''
+        description: 'If the agency\'s FOIA information is reported by \'component\' (sub-organization, office, division), the components must be defined here. Component abbreviations entered here are available throughout this workbook in drop-down lists, allowing entry of information for each component. Select all active components that should appear in your agency\'s report. If a component is missing please inform OIP. If a component is added, data must be entered in all fields for that component. Clicking "Remove" in any tab will remove all data fields for the component.'
         required_fields: true
         id: ''
         classes: ''
@@ -401,7 +401,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: 'If a component or the agency does not have other reasons to list, users should enter “N/A” for the Description and “0” for the Number of Times “Other” Reason was Relied Upon.'
+        description: 'Every component that  processes requests should be listed, even if they do not have data to report in this section. If the component field is filled in, at least one description must also be entered. If a description is entered, an associated count must be entered. Counts must be non-negative integers. For each agency/component enter any "Other Reasons for Denials" from Chart V.B.1. Each agency/component may have more than one "Other Reason." To add another reason for a component click "Add FOIA Requests V.B.2. Other Denials Detail." To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" and "Total" field(s) will be autocalculated as you enter data in this section. The calculated column titled \'COMPONENT TOTAL\' must match the number entered in V.B.1., column \'Other\' for the component, and for the agency overall. If a component or the agency does not have other reasons to list, users should enter “N/A” for the Description and “0” for the Number of Times “Other” Reason was Relied Upon.'
         required_fields: true
       label: 'V.B.(2). DISPOSITION OF FOIA REQUESTS -- "OTHER" REASONS FOR "FULL DENIALS BASED ON REASONS OTHER THAN EXEMPTIONS"'
     group_v_b_3_disposition_of_foia_:
@@ -416,7 +416,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Every component that  processes requests should be listed, even if they do not have data to report in this section. If the component field is filled in, all other editable fields must be filled in. All values must be non-negative integers. To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" field(s) will be autocalculated as you enter data in this section.'
         required_fields: true
       label: 'V.B.(3). DISPOSITION OF FOIA REQUESTS -- NUMBER OF TIMES EXEMPTIONS APPLIED'
     group_vi_a_administrative_appeal:
@@ -434,7 +434,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Only those components that process administrative appeals should be entered in this section. If the component field is filled in, all other editable fields must be filled in. All values must be non-negative integers.  To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" and "Number of Appeals Pending as of End of Fiscal Year" field(s) will be autocalculated as you enter data in this section.'
         required_fields: true
       label: 'VI.A. ADMINISTRATIVE APPEALS OF INITIAL DETERMINATIONS OF FOIA REQUESTS -- RECEIVED, PROCESSED, AND PENDING ADMINISTRATIVE APPEA'
     group_vi_c_2_reasons_for_denial_:
@@ -506,7 +506,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Only those components that process administrative appeals should be entered in this section. If the component field is filled in, all other editable fields must be filled in. All values must be non-negative integers. To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" and "Total" field(s) will be autocalculated as you enter data in this section. The "Total" must match the "Number of Appeals Processed in Fiscal Year" for the component and "Agency Overall Number of Appeals Processed in Fiscal Year" in section VI.A.'
         required_fields: true
       label: 'VI.B. DISPOSITION OF ADMINISTRATIVE APPEALS -- ALL PROCESSED APPEALS '
     group_vi_c_3_reasons_for_denial_:
