@@ -459,7 +459,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Only those components that process administrative appeals should be entered in this section. If the component field is filled in, all other editable fields must be filled in. All values must be non-negative integers. To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" field(s) will be autocalculated as you enter data in this section.'
         required_fields: true
       label: 'VI.C.(2). REASONS FOR DENIAL ON APPEAL -- REASONS OTHER THAN EXEMPTIONS'
     group_vi_c_1_reasons_for_denial_:
@@ -487,7 +487,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Only those components that process administrative appeals should be entered in this section. If the component field is filled in, all other editable fields must be filled in. All values must be non-negative integers. To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" field(s) will be autocalculated as you enter data in this section.'
         required_fields: true
       label: 'VI.C.(1). REASONS FOR DENIAL ON APPEAL -- NUMBER OF TIMES EXEMPTIONS APPLIED'
     group_vi_b_disposition_of_admini:
@@ -521,7 +521,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: 'If a component or the agency does not have other reasons to list, users should enter “N/A” for the Description and “0” for the Number of Times “Other” Reason was Relied Upon.'
+        description: 'Only those components that process administrative appeals should be entered in this section. If a component or the agency does not have other reasons to list, users should enter “N/A” for the Description and “0” for the Number of Times “Other” Reason was Relied Upon. Each agency/component may have more than one "Other Reason." To add another reason for a component click "Add Admin. Appeals VI.C.3. Other Denials Detail." To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" and "Total" field(s) will be autocalculated as you enter data in this section. The calculated column titled ''COMPONENT TOTAL'' must match the number entered on sheet VI.C.2., column ''Other'' for the component, and for the agency overall.'
         required_fields: true
       label: 'VI.C.(3). REASONS FOR DENIAL ON APPEAL -- "OTHER" REASONS '
     group_vi_c_4_response_time_for_a:
@@ -539,7 +539,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: ''
+        description: 'Only those components that process administrative appeals should be entered in this section. If the component field is filled in, all other editable fields must be filled in. All values must be non-negative numeric values, or the special value "<1". To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" fields must be manually entered, they are not autocalculated.'
         required_fields: true
       label: 'VI.C.(4). RESPONSE TIME FOR ADMINISTRATIVE APPEALS'
     group_vi_c_5_ten_oldest_pending_:
@@ -1737,7 +1737,7 @@ third_party_settings:
       format_settings:
         label: 'VI.C.(5). TEN OLDEST PENDING ADMINISTRATIVE APPEALS'
         formatter: closed
-        description: "\"AGENCY OVERALL\" information cannot be calculated from component information, and must be entered.\r\n\r\nIn the date field enter the date the appeal was received.\r\n\r\nIf a component or the agency overall does not have ten or more appeals pending as of the end of the fiscal year, complete the excess cells by listing \"N/A\" for the \"Date of Appeal\" and \"0\" for the \"Number of Days Pending.\"\r\n"
+        description: 'Only those components that process administrative appeals should be entered in this section. If a component or the agency overall does not have ten or more appeals pending as of the end of the fiscal year, complete the excess cells by listing "N/A" for the "Date of Appeal" and "0" for the "Number of Days Pending." If a date is filled in, the number of days associated with the date must also be filled in. "Number of Days Pending" values must be non-negative integers. Working day calculations should include only working days (excluding weekends and public holidays) as of the end of the fiscal year (i.e., September 30). There are working day calculators that may be helpful in calculating these dates. To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" fields must be manually entered, they are not autocalculated.\r\n\r\nIn the date field enter the date the appeal was received.'
         required_fields: true
         id: ''
         classes: ''
