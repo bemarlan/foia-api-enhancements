@@ -366,7 +366,7 @@ third_party_settings:
       format_settings:
         label: 'V.B.(1). DISPOSITION OF FOIA REQUESTS -- ALL PROCESSED REQUESTS '
         formatter: closed
-        description: 'Every component that processes requests should be listed, even if they do not have data to report in this section. If the component field is filled in, all other editable fields must be filled in. All values must be non-negative integers. To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" and "Total" field(s) will be autocalculated as you enter data in this section. The sum of all columns (calculated column titled \'TOTAL\') must match the number entered in V.A., column \'Number of Requests Processed in Fiscal Year\' for the component, and for the agency overall.'
+        description: 'Every component that processes requests should be listed, even if they do not have data to report in this section. If the component field is filled in, all other editable fields must be filled in. All values must be non-negative integers. To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" and "Total" field(s) will be autocalculated as you enter data in this section. The sum of all columns (calculated column titled ''TOTAL'') must match the number entered in V.A., column ''Number of Requests Processed in Fiscal Year'' for the component, and for the agency overall.'
         required_fields: true
         id: ''
         classes: ''
@@ -384,7 +384,7 @@ third_party_settings:
       format_settings:
         label: 'Agency Info'
         formatter: open
-        description: 'If the agency\'s FOIA information is reported by \'component\' (sub-organization, office, division), the components must be defined here. Component abbreviations entered here are available throughout this workbook in drop-down lists, allowing entry of information for each component. Select all active components that should appear in your agency\'s report. If a component is missing please inform OIP. If a component is added, data must be entered in all fields for that component. Clicking "Remove" in any tab will remove all data fields for the component.'
+        description: 'If the agency''s FOIA information is reported by ''component'' (sub-organization, office, division), the components must be defined here. Component abbreviations entered here are available throughout this workbook in drop-down lists, allowing entry of information for each component. Select all active components that should appear in your agency''s report. If a component is missing please inform OIP. If a component is added, data must be entered in all fields for that component. Clicking "Remove" in any tab will remove all data fields for the component.'
         required_fields: true
         id: ''
         classes: ''
@@ -401,7 +401,7 @@ third_party_settings:
         id: ''
         classes: ''
         formatter: closed
-        description: 'Every component that  processes requests should be listed, even if they do not have data to report in this section. If the component field is filled in, at least one description must also be entered. If a description is entered, an associated count must be entered. Counts must be non-negative integers. For each agency/component enter any "Other Reasons for Denials" from Chart V.B.1. Each agency/component may have more than one "Other Reason." To add another reason for a component click "Add FOIA Requests V.B.2. Other Denials Detail." To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" and "Total" field(s) will be autocalculated as you enter data in this section. The calculated column titled \'COMPONENT TOTAL\' must match the number entered in V.B.1., column \'Other\' for the component, and for the agency overall. If a component or the agency does not have other reasons to list, users should enter “N/A” for the Description and “0” for the Number of Times “Other” Reason was Relied Upon.'
+        description: 'Every component that  processes requests should be listed, even if they do not have data to report in this section. If the component field is filled in, at least one description must also be entered. If a description is entered, an associated count must be entered. Counts must be non-negative integers. For each agency/component enter any "Other Reasons for Denials" from Chart V.B.1. Each agency/component may have more than one "Other Reason." To add another reason for a component click "Add FOIA Requests V.B.2. Other Denials Detail." To add a component click "Add" above the "Agency Overall" fields. The "Agency Overall" and "Total" field(s) will be autocalculated as you enter data in this section. The calculated column titled ''COMPONENT TOTAL'' must match the number entered in V.B.1., column ''Other'' for the component, and for the agency overall. If a component or the agency does not have other reasons to list, users should enter “N/A” for the Description and “0” for the Number of Times “Other” Reason was Relied Upon.'
         required_fields: true
       label: 'V.B.(2). DISPOSITION OF FOIA REQUESTS -- "OTHER" REASONS FOR "FULL DENIALS BASED ON REASONS OTHER THAN EXEMPTIONS"'
     group_v_b_3_disposition_of_foia_:
