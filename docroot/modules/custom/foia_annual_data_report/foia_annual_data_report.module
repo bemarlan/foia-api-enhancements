@@ -8,7 +8,6 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\AlertCommand;
-use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Ajax\RedirectCommand;
@@ -70,23 +69,30 @@ function foia_annual_data_report_ajax_existing_node(&$form, FormStateInterface
 }
 
 /**
- * Do all the magic to get the component list and update the Component options.
+ * @todo
+ * Figure out how to get the node ID of the newly created entity.
  */
 function foia_annual_data_report_create_node($form, FormStateInterface
  $form_state) {
 
   $is_node = \Drupal::routeMatch()->getParameter('node');
   $response = new AjaxResponse();
-  $currentURL = Url::fromRoute('<current>');
+  $url = Url::fromRoute('<front>', [], ['absolute' => TRUE]);
 
   if ($is_node instanceof NodeInterface) {
-    $node = Node::load($is_node->nid->value);
-    ($node->title->value == '') ? $node->title->value = 'Annual FOIA Report' :
-      '';
-    $node->set('field_agency', $form['field_agency']['value']);
+    $node = \Drupal::entityTypeManager()->getStorage('node')->create([
+      'type' => 'annual_foia_report_data',
+      'title' => $form_state->getValue('title'),
+      'field_agency' => $form_state->getValue('field_agency')
+    ]);
     $node->save();
+    $nid = $node->id(); // why does this not work???
+    $url = $url->toString() . '/node/'.$nid.'/edit';
   }
-  $response->addCommand(new RedirectCommand($currentURL->toString()));
+
+  $response->addCommand(new RedirectCommand($url));
+  $response->addCommand(new AlertCommand("Please wait while the page refreshes"));
+  $response->addCommand(new AlertCommand($nid)); // debug
   return $response;
 }
 
@@ -102,7 +108,8 @@ function foia_annual_data_report_refresh($form, FormStateInterface
 
   if ($node instanceof NodeInterface) {
     $nid = $node->id();
-    $node = Node::load($nid);
+//    $node = Node::load($nid);
+    $node = \Drupal::entityManager()->getStorage('node')->load($nid);
     $node->set('field_agency', $form_state->getValue('field_agency'));
     $node->save();
     $response->addCommand(new RedirectCommand($currentURL->toString()));
