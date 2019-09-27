@@ -50,16 +50,28 @@ function foia_annual_data_report_ajax_component_to_agency(&$form, FormStateInter
 function foia_annual_data_report_update_component_list($form, FormStateInterface $form_state) {
   $agency_field_value = $form_state->getValue('field_agency');
   $agency_id = $agency_field_value[0]['target_id'];
-  $args = [$agency_id];
 
-  $view = Views::getView('agency_component_by_agency');
-  $view->setDisplay('entity_reference_1');
-  $view->setArguments($args);
-  $view->preExecute($args);
-  $view->execute();
-  $content = $view->buildRenderable('entity_reference_1', $args);
+  $entity_query = \Drupal::entityQuery('node');
 
-  $log_message = sizeof($content) . " results returned from view";
+  $group = $entity_query
+    ->orConditionGroup()
+    ->condition('field_rep_exp', '')
+    ->condition('field_rep_exp', date('Y-m-d'), '>=');
+
+  $entity_query
+      ->condition('type', 'agency_component')
+      ->condition('field_agency', $agency_id)
+      ->condition('status', 1)
+      ->condition('field_agency_comp_abbreviation', '', '<>')
+      ->condition('field_rep_start', date('Y-m-d'), '<=');
+
+  //@todo sort out why this condition group seems to overrestirct;
+  //$entity_query->condition($group);
+
+  $component_ids = $entity_query->execute();
+
+
+  $log_message = print_r($component_ids, True);
 
   $response = new AjaxResponse();
   $response->addCommand(new AlertCommand($log_message));
