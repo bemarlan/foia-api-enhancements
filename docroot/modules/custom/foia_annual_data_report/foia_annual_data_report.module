@@ -34,7 +34,7 @@ function foia_annual_data_report_form_node_annual_foia_report_data_form_alter(&$
  */
 function foia_annual_data_report_ajax_component_to_agency(&$form, FormStateInterface $form_state, $form_id) {
 
-  $form['field_agency']['widget'][0]['#ajax'] = [
+  $form['field_agency']['widget'][0]['target_id']['#ajax'] = [
     'callback' => 'foia_annual_data_report_update_component_list',
     'event' => 'change',
     'progress' => [
@@ -42,30 +42,30 @@ function foia_annual_data_report_ajax_component_to_agency(&$form, FormStateInter
       'message' => 'Please Wait...',]
   ];
 
-  debug($form['field_agency']['widget']);
-
 }
 
 /**
- *
+ * Do all the magic to get the component list and update the Component options.
  */
 function foia_annual_data_report_update_component_list($form, FormStateInterface $form_state) {
-/*
-  $args = [$form_state->getValue('field_agency')];
+  $agency_field_value = $form_state->getValue('field_agency');
+  $agency_id = $agency_field_value[0]['target_id'];
+  $args = [$agency_id];
   $view = Views::getView('agency_component_by_agency');
-  if (is_object($view)) {
-    //$view->setArguments($args);
-    //$view->setDisplay('entity_reference_1');
-    $view->preExecute();
-    $view->execute();
-    $content = $view->buildRenderable('entity_reference_1', $args);
+  $view->setArguments($args);
+  $view->setDisplay('entity_reference_1');
+  $view->execute();
+  $content = $view->result;
+
+  if(!$content) {
+    $log_message = sizeof($content) . " results returned from view";
   }
   else {
-    $content = False;
+    $log_message = "No results returned from the view";
   }
-*/
+
   $response = new AjaxResponse();
-  $response->addCommand(new AlertCommand("This is a test"));
+  $response->addCommand(new AlertCommand($log_message));
   return $response;
 }
 
