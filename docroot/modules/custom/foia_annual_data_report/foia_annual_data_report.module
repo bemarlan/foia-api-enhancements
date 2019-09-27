@@ -4,7 +4,92 @@
  * @file
  * Primary module hooks for foia_annual_data_report module.
  *
- * @DCG
- * This file is no longer required in Drupal 8.
- * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\Views;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\AlertCommand;
+
+/**
+ * Implements hook_form_form_id_alter().
+ */
+function foia_annual_data_report_form_node_annual_foia_report_data_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  foia_annual_data_report_ajax_component_to_agency($form, $form_state, $form_id);
+}
+
+/**
+ * Implements hook_form_form_id_alter().
+ */
+function foia_annual_data_report_form_node_annual_foia_report_data_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  foia_annual_data_report_ajax_component_to_agency($form, $form_state, $form_id);
+}
+
+/**
+ * Helper function to add ajax to update the component when the agency changes.
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function foia_annual_data_report_ajax_component_to_agency(&$form, FormStateInterface $form_state, $form_id) {
+
+  $form['field_agency']['widget'][0]['#ajax'] = [
+    'callback' => 'foia_annual_data_report_update_component_list',
+    'event' => 'change',
+    'progress' => [
+      'type' => 'throbber',
+      'message' => 'Please Wait...',]
+  ];
+
+  debug($form['field_agency']['widget']);
+
+}
+
+/**
+ *
+ */
+function foia_annual_data_report_update_component_list($form, FormStateInterface $form_state) {
+/*
+  $args = [$form_state->getValue('field_agency')];
+  $view = Views::getView('agency_component_by_agency');
+  if (is_object($view)) {
+    //$view->setArguments($args);
+    //$view->setDisplay('entity_reference_1');
+    $view->preExecute();
+    $view->execute();
+    $content = $view->buildRenderable('entity_reference_1', $args);
+  }
+  else {
+    $content = False;
+  }
+*/
+  $response = new AjaxResponse();
+  $response->addCommand(new AlertCommand("This is a test"));
+  return $response;
+}
+
+/**
+ *
+function mymodule_update_end_date($form, $form_state) {
+
+$start_date = $form['field_start_date']['widget'][0]['value']['#value']['object']->getPhpDateTime();
+// Calculate end date (add two months).
+$end_date = $start_date->modify('+2 month')->format('Y-m-d');
+
+$response = new AjaxResponse();
+$selector = '#edit-field-end-date-0-value-date';
+$method = 'val';
+$arguments = [$end_date];
+$response->addCommand(new InvokeCommand($selector, $method, $arguments));
+//$response->addCommand(new AlertCommand('Blah'));
+return $response;
+
+}
+
+function mymodule_update_billing_cycles($form, $form_state) {
+$response = new AjaxResponse();
+$response->addCommand(new AlertCommand("This is a test"));
+return $response;
+}
  */
