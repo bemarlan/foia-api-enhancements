@@ -51,18 +51,15 @@ function foia_annual_data_report_update_component_list($form, FormStateInterface
   $agency_field_value = $form_state->getValue('field_agency');
   $agency_id = $agency_field_value[0]['target_id'];
   $args = [$agency_id];
-  $view = Views::getView('agency_component_by_agency');
-  $view->setArguments($args);
-  $view->setDisplay('entity_reference_1');
-  $view->execute();
-  $content = $view->result;
 
-  if(!$content) {
-    $log_message = sizeof($content) . " results returned from view";
-  }
-  else {
-    $log_message = "No results returned from the view";
-  }
+  $view = Views::getView('agency_component_by_agency');
+  $view->setDisplay('entity_reference_1');
+  $view->setArguments($args);
+  $view->preExecute($args);
+  $view->execute();
+  $content = $view->buildRenderable('entity_reference_1', $args);
+
+  $log_message = sizeof($content) . " results returned from view";
 
   $response = new AjaxResponse();
   $response->addCommand(new AlertCommand($log_message));
