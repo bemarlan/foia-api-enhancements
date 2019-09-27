@@ -3,26 +3,28 @@
 /**
  * @file
  * Primary module hooks for foia_annual_data_report module.
- *
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\views\Views;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\AlertCommand;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Ajax\RedirectCommand;
 
 /**
  * Implements hook_form_form_id_alter().
  */
 function foia_annual_data_report_form_node_annual_foia_report_data_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  foia_annual_data_report_ajax_component_to_agency($form, $form_state, $form_id);
+  foia_annual_data_report_ajax_existing_node($form, $form_state, $form_id);
 }
 
 /**
  * Implements hook_form_form_id_alter().
  */
 function foia_annual_data_report_form_node_annual_foia_report_data_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  foia_annual_data_report_ajax_component_to_agency($form, $form_state, $form_id);
+  foia_annual_data_report_ajax_new_node($form, $form_state, $form_id);
 }
 
 /**
@@ -32,14 +34,37 @@ function foia_annual_data_report_form_node_annual_foia_report_data_form_alter(&$
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  * @param $form_id
  */
-function foia_annual_data_report_ajax_component_to_agency(&$form, FormStateInterface $form_state, $form_id) {
+function foia_annual_data_report_ajax_new_node(&$form, FormStateInterface
+ $form_state, $form_id) {
 
   $form['field_agency']['widget'][0]['target_id']['#ajax'] = [
-    'callback' => 'foia_annual_data_report_update_component_list',
+    'callback' => 'foia_annual_data_report_create_node',
     'event' => 'change',
     'progress' => [
       'type' => 'throbber',
-      'message' => 'Please Wait...',]
+      'message' => 'Please Wait...',
+    ],
+  ];
+
+}
+
+/**
+ * Helper function to add ajax to update the component when the agency changes.
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function foia_annual_data_report_ajax_existing_node(&$form, FormStateInterface
+ $form_state, $form_id) {
+
+  $form['field_agency']['widget'][0]['target_id']['#ajax'] = [
+    'callback' => 'foia_annual_data_report_refresh',
+    'event' => 'change',
+    'progress' => [
+      'type' => 'throbber',
+      'message' => 'Please Wait...',
+    ],
   ];
 
 }
@@ -47,58 +72,42 @@ function foia_annual_data_report_ajax_component_to_agency(&$form, FormStateInter
 /**
  * Do all the magic to get the component list and update the Component options.
  */
-function foia_annual_data_report_update_component_list($form, FormStateInterface $form_state) {
-  $agency_field_value = $form_state->getValue('field_agency');
-  $agency_id = $agency_field_value[0]['target_id'];
+function foia_annual_data_report_create_node($form, FormStateInterface
+ $form_state) {
 
-  $entity_query = \Drupal::entityQuery('node');
-
-  $group = $entity_query
-    ->orConditionGroup()
-    ->condition('field_rep_exp', '')
-    ->condition('field_rep_exp', date('Y-m-d'), '>=');
-
-  $entity_query
-      ->condition('type', 'agency_component')
-      ->condition('field_agency', $agency_id)
-      ->condition('status', 1)
-      ->condition('field_agency_comp_abbreviation', '', '<>')
-      ->condition('field_rep_start', date('Y-m-d'), '<=');
-
-  //@todo sort out why this condition group seems to overrestirct;
-  //$entity_query->condition($group);
-
-  $component_ids = $entity_query->execute();
-
-
-  $log_message = print_r($component_ids, True);
-
+  $is_node = \Drupal::routeMatch()->getParameter('node');
   $response = new AjaxResponse();
-  $response->addCommand(new AlertCommand($log_message));
+  $currentURL = Url::fromRoute('<current>');
+
+  if ($is_node instanceof NodeInterface) {
+    $node = Node::load($is_node->nid->value);
+    ($node->title->value == '') ? $node->title->value = 'Annual FOIA Report' :
+      '';
+    $node->set('field_agency', $form['field_agency']['value']);
+    $node->save();
+  }
+  $response->addCommand(new RedirectCommand($currentURL->toString()));
   return $response;
 }
 
 /**
- *
-function mymodule_update_end_date($form, $form_state) {
-
-$start_date = $form['field_start_date']['widget'][0]['value']['#value']['object']->getPhpDateTime();
-// Calculate end date (add two months).
-$end_date = $start_date->modify('+2 month')->format('Y-m-d');
-
-$response = new AjaxResponse();
-$selector = '#edit-field-end-date-0-value-date';
-$method = 'val';
-$arguments = [$end_date];
-$response->addCommand(new InvokeCommand($selector, $method, $arguments));
-//$response->addCommand(new AlertCommand('Blah'));
-return $response;
-
-}
-
-function mymodule_update_billing_cycles($form, $form_state) {
-$response = new AjaxResponse();
-$response->addCommand(new AlertCommand("This is a test"));
-return $response;
-}
+ * Do all the magic to get the component list and update the Component options.
  */
+function foia_annual_data_report_refresh($form, FormStateInterface
+ $form_state) {
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $response = new AjaxResponse();
+  $currentURL = Url::fromRoute('<current>');
+
+  if ($node instanceof NodeInterface) {
+    $nid = $node->id();
+    $node = Node::load($nid);
+    $node->set('field_agency', $form_state->getValue('field_agency'));
+    $node->save();
+    $response->addCommand(new RedirectCommand($currentURL->toString()));
+    $response->addCommand(new AlertCommand("Please wait while the page refreshes"));
+  }
+
+  return $response;
+}
