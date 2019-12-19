@@ -75,3 +75,6 @@ disable-targets:
       sniff:
         all: true
         files: true
+
+validate.deprecation.modules: false
+validate.deprecation.themes: false
