@@ -1,3 +1,4 @@
+uuid: 6b3b6a3a-54e6-4861-ac8d-1dcc3dd33cec
 langcode: en
 status: open
 dependencies:
@@ -211,4 +212,4 @@ handlers:
       exclude_empty_checkbox: false
       twig: false
       theme_name: ''
-uuid: 6b3b6a3a-54e6-4861-ac8d-1dcc3dd33cec
+      parameters: {  }
