@@ -75,6 +75,7 @@ disable-targets:
       sniff:
         all: true
         files: true
-
+    phpunit:
+      run: true
 validate.deprecation.modules: false
 validate.deprecation.themes: false
